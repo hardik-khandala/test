@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+
+        }
+        body{
+            background-color: black;
+        }
+        .form{
+            align-items: center;
+        }
+        
+        form input, form textarea{
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px 10px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+        .btn{
+            padding: 10px 10px;
+            font-size: 15px;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .copyright{
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            color: #fff;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <form name="submit-to-google-sheet">
+        <input type="text" name="Name" id="" placeholder="Enter Your Name" required><br>
+        <input type="email" name="Email" id="" placeholder="Enter Your Mail" required><br>
+        <textarea name="Message" id="" cols="30" rows="10" placeholder="Enter Your Code"></textarea>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+<div class="copyright">
+    <p>Created by Hardik Khandala</p>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxvVr-kwnr47gKZ6ww1hYFDtr312Lv3t9EbJXJCKLavYhNf1ooA24_h-mvPZ6rM0Fro/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
