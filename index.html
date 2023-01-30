@@ -9,26 +9,29 @@
         *{
             margin: 0%;
             padding: 0%;
-
         }
         body{
             background-color: black;
         }
-        .form{
-            align-items: center;
-        }
-        
         form input, form textarea{
+            width: 80%;
             border: 0;
             outline: none;
             background: #262626;
             padding: 15px;
-            margin: 15px 10px;
+            margin: 10px 0;
+            margin-top: 25px;
             color: #fff;
             font-size: 18px;
             border-radius: 6px;
         }
+        .form1{
+            text-align: center;
+        }
         .btn{
+            width: 120px;
+            height: 40px;
+            margin-top: 15px;
             padding: 10px 10px;
             font-size: 15px;
             background-color: red;
@@ -37,6 +40,8 @@
             cursor: pointer;
         }
         .copyright{
+            position:fixed;
+            bottom: 0;
             width: 100%;
             text-align: center;
             padding: 25px 0;
@@ -45,20 +50,24 @@
             font-weight: 300;
             margin-top: 20px;
         }
+        footer p a{
+            color: blueviolet;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-<div class="form">
+<div class="form1">
     <form name="submit-to-google-sheet">
         <input type="text" name="Name" id="" placeholder="Enter Your Name" required><br>
         <input type="email" name="Email" id="" placeholder="Enter Your Mail" required><br>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Enter Your Code"></textarea>
+        <textarea name="Message" id="" cols="30" rows="10" placeholder="Enter Your Code"></textarea><br>
         <button type="submit" class="btn">Submit</button>
     </form>
 </div>
-<div class="copyright">
-    <p>Created by Hardik Khandala</p>
-</div>
+<footer class="copyright">
+    <p>&#169; Created by <a href="https://www.github.com/hardik-khandala" target="_blank">Hardik Khandala</a></p>
+</footer>
 
 <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxvVr-kwnr47gKZ6ww1hYFDtr312Lv3t9EbJXJCKLavYhNf1ooA24_h-mvPZ6rM0Fro/exec'
