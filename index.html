@@ -5,56 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    <style>
-        *{
-            margin: 0%;
-            padding: 0%;
-        }
-        body{
-            background-color: black;
-        }
-        form input, form textarea{
-            width: 80%;
-            border: 0;
-            outline: none;
-            background: #262626;
-            padding: 15px;
-            margin: 10px 0;
-            margin-top: 25px;
-            color: #fff;
-            font-size: 18px;
-            border-radius: 6px;
-        }
-        .form1{
-            text-align: center;
-        }
-        .btn{
-            width: 120px;
-            height: 40px;
-            margin-top: 15px;
-            padding: 10px 10px;
-            font-size: 15px;
-            background-color: red;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .copyright{
-            position:fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            padding: 25px 0;
-            color: #fff;
-            background: #262626;
-            font-weight: 300;
-            margin-top: 20px;
-        }
-        footer p a{
-            color: blueviolet;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">  
 </head>
 <body>
 <div class="form1">
@@ -68,17 +19,6 @@
 <footer class="copyright">
     <p>&#169; Created by <a href="https://www.github.com/hardik-khandala" target="_blank">Hardik Khandala</a></p>
 </footer>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxvVr-kwnr47gKZ6ww1hYFDtr312Lv3t9EbJXJCKLavYhNf1ooA24_h-mvPZ6rM0Fro/exec'
-  const form = document.forms['submit-to-google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+<script src="app.js"></script>
 </body>
 </html>
