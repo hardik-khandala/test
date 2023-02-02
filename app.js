@@ -4,6 +4,6 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxvVr-kwnr47gKZ6ww1hY
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(res => alert("Code Loaded")).then(setTimeout(form.reset(), 1000)) 
+      .then(setTimeout(form.reset(), 1000)) 
       .catch(err => alert('Error: '+err.message))
   })
